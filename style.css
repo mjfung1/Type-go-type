@@ -364,4 +364,61 @@ a span:nth-child(4) {
     }
 } */
 
+body, .quote-input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  position: absolute;
+  background-color: #cd58eb75;
+  padding: 1rem;
+  top: 2rem;
+  right: 2rem;
+  border-radius: .5rem;
+  width: 700px;
+  max-width: 70%;
+  
+}
+
+.timer {
+  position: absolute;
+  top: 3rem;
+  left: 25rem;
+  font-size: 3rem;
+  color: #e9bae9f1;
+  font-weight: bold;
+}
+
+.quote-display {
+  margin-bottom: 1rem;
+  margin-left: calc(1rem + 2px);
+  margin-right: calc(1rem + 2px);
+}
+
+.quote-input {
+  background-color: transparent;
+  border: 2px solid #A1922E;
+  outline: none;
+  width: 100%;
+  height: 8rem;
+  margin: auto;
+  resize: none;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: .5rem;
+}
+
+.quote-input:focus {
+  border-color: black;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
+
 
