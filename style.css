@@ -248,23 +248,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 45vh;
-    flex-direction: row;
+    min-height: 30vh;
+    flex-direction: column;
+
 }
 
 .button {
+    left: -500px;
     position: relative;
-    /* display: inline-block; */
+    display: inline-block;
     padding: 25px 25px;
-    margin: 0px 20px;
+    margin: 60px 20px;
+    border-radius: 8px;
+    background-color: rgba(103, 158, 40, 0.438);
     color: #03e9f4;
     font-family: 'Indie Flower', cursive;
-    font-size: 24px;
+    font-size: 35px;
     text-decoration: none;
     overflow: hidden;
     transition: 1s;
     letter-spacing: 3px;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); */
 }
 
 .button:nth-child(1) {
