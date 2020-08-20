@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+}
+
+.background {
+    position: relative;
+    background: #00fdff url(1748.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: repeat-x;
+    animation: animatecity 20s linear infinite;
+}
+#ship {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+
+#space-ship {
+    animation: ship 1s ease-in-out infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes ship {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(3deg);
+    }
+}
+
+#space-light {
+    animation: light 3s infinite ease-in alternate;
+    transform-origin: top;
+    transform-box: fill-box;
+}
+
+@keyframes light {
+    from{
+        transform: rotateZ(-10deg);
+    }
+    to{
+        transform: rotateZ(10deg);
+    }
+}
+
+#flying-dude {
+    position: absolute;
+    bottom: 40px;
+    right: 0px;
+}
+
+#tie {
+    animation: tie 1s infinite ease-in alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes tie {
+     from{
+        transform: translateY(0%) rotateZ(0deg);
+    }
+    to{
+        transform: translateY(2%) rotateZ(4deg);
+    }
+}
+
+#hair {
+    animation: hair .5s infinite ease-in alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes hair {
+     from{
+        transform: translateY(0%) rotateZ(0deg);
+    }
+    to{
+        transform: translateY(5%) rotateZ(5deg);
+    }
+}
+
+#right-arm, #left-arm {
+    animation: arms 1s infinite ease-in alternate;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+@keyframes arms {
+    from{
+        transform: rotateZ(-2deg);
+    }
+    to{
+        transform: rotateZ(8deg);
+    }
+}
+
+
+#bike {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+}
+
+@keyframes animatecity {
+    from{
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+
+#right-wheel, #left-wheel {
+    animation: wheel 3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#man {
+    animation: man 1s ease-in infinite alternate;
+    transform-origin: bottom;
+}
+
+#hat {
+    animation: hat 1s ease-in-out infinite alternate;
+     transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+@keyframes wheel {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes man {
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(15deg);
+    }
+}
+
+@keyframes hat {
+    from{
+        transform: translateY(0%) rotateZ(0deg);
+    }
+    to{
+        transform: translateY(20%) rotateZ(4deg);
+    }
+}
+
+
+
+
+#logo {
+    animation: fill 0.5s ease forwards 3.5s;
+}
+
+
+#logo:hover path:nth-child(1){
+    stroke-dasharray: 509px;
+    stroke-dashoffset: 509px;
+    animation: line-anim 2s ease forwards;
+}
+#logo:hover path:nth-child(2){
+    stroke-dasharray: 494px;
+    stroke-dashoffset: 494px;
+    animation: line-anim 2s ease forwards 0.3s;
+}
+#logo:hover path:nth-child(3){
+    stroke-dasharray: 494px;
+    stroke-dashoffset: 494px;
+    animation: line-anim 2s ease forwards 0.6s;
+}
+#logo:hover path:nth-child(4){
+    stroke-dasharray: 737;
+    stroke-dashoffset: 737;
+    animation: line-anim 2s ease forwards 0.9s;
+}
+#logo:hover path:nth-child(5){
+    stroke-dasharray: 419px;
+    stroke-dashoffset: 419px;
+    animation: line-anim 2s ease forwards 1.2s;
+}
+#logo:hover path:nth-child(6){
+    stroke-dasharray: 434px;
+    stroke-dashoffset: 434px;
+    animation: line-anim 2s ease forwards 1.5s;
+}
+#logo:hover path:nth-child(7){
+    stroke-dasharray: 138px;
+    stroke-dashoffset: 138px;
+    animation: line-anim 2s ease forwards 1.8s;
+}
+#logo:hover path:nth-child(8){
+    stroke-dasharray: 399px;
+    stroke-dashoffset: 399px;
+    animation: line-anim 2s ease forwards 2.1s;
+}
+#logo:hover path:nth-child(9){
+    stroke-dasharray: 434px;
+    stroke-dashoffset: 434px;
+    animation: line-anim 2s ease forwards 2.4s;
+}
+#logo:hover path:nth-child(10){
+    stroke-dasharray: 434px;
+    stroke-dashoffset: 434px;
+    animation: line-anim 2s ease forwards 2.7s;
+}
+#logo:hover path:nth-child(11){
+    stroke-dasharray: 240px;
+    stroke-dashoffset: 240px;
+    animation: line-anim 2s ease forwards 3.0s;
+}
+
+@keyframes line-anim{
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill{
+    from {
+        fill: transparent;
+    }
+    to {
+        fill:white;
+    }
+}
+
+#dark-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    flex-direction: row;
+}
+
+.button {
+    position: relative;
+    /* display: inline-block; */
+    padding: 25px 25px;
+    margin: 0px 20px;
+    color: #03e9f4;
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 1s;
+    letter-spacing: 3px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.button:nth-child(1) {
+    filter: hue-rotate(170deg);
+}
+
+.button:nth-child(2) {
+    filter: hue-rotate(800deg);
+}
+
+.button:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4;
+    box-shadow: 0 0 25px #03e9f4;
+    box-shadow: 0 0 50px #03e9f4;
+    box-shadow: 0 0 200px #03e9f4;
+}
+
+a span {
+    position: absolute;
+    display: block;
+}
+
+/* a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%
+    }
+}
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%
+    }
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%
+    }
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%
+    }
+} */
+
+
