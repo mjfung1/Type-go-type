@@ -248,7 +248,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 40vh;
+    min-height: 45vh;
     flex-direction: row;
 }
 
