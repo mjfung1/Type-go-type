@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +20,7 @@ body {
     background-position: repeat-x;
     animation: animatecity 20s linear infinite;
 }
+
 #ship {
     position: absolute;
     top: 150px;
@@ -53,63 +57,8 @@ body {
     }
 }
 
-#flying-dude {
-    position: absolute;
-    bottom: 40px;
-    right: 0px;
-}
-
-#tie {
-    animation: tie 1s infinite ease-in alternate;
-    transform-origin: center;
-    transform-box: fill-box;
-}
-
-@keyframes tie {
-     from{
-        transform: translateY(0%) rotateZ(0deg);
-    }
-    to{
-        transform: translateY(2%) rotateZ(4deg);
-    }
-}
-
-#hair {
-    animation: hair .5s infinite ease-in alternate;
-    transform-origin: center;
-    transform-box: fill-box;
-}
-
-@keyframes hair {
-     from{
-        transform: translateY(0%) rotateZ(0deg);
-    }
-    to{
-        transform: translateY(5%) rotateZ(5deg);
-    }
-}
-
-#right-arm, #left-arm {
-    animation: arms 1s infinite ease-in alternate;
-    transform-origin: bottom;
-    transform-box: fill-box;
-}
-
-@keyframes arms {
-    from{
-        transform: rotateZ(-2deg);
-    }
-    to{
-        transform: rotateZ(8deg);
-    }
-}
 
 
-#bike {
-    position: absolute;
-    bottom: 10px;
-    right: 100px;
-}
 
 @keyframes animatecity {
     from{
@@ -119,6 +68,14 @@ body {
         background-position: 100% 0;
     }
 }
+
+#bike {
+    position: absolute;
+    bottom: 10px;
+    right: 550px;
+}
+
+
 
 
 #right-wheel, #left-wheel {
@@ -134,7 +91,7 @@ body {
 
 #hat {
     animation: hat 1s ease-in-out infinite alternate;
-     transform-origin: bottom;
+    transform-origin: bottom;
     transform-box: fill-box;
 }
 
@@ -168,83 +125,10 @@ body {
 
 
 
-#logo {
-    animation: fill 0.5s ease forwards 3.5s;
-}
 
-
-#logo:hover path:nth-child(1){
-    stroke-dasharray: 509px;
-    stroke-dashoffset: 509px;
-    animation: line-anim 2s ease forwards;
-}
-#logo:hover path:nth-child(2){
-    stroke-dasharray: 494px;
-    stroke-dashoffset: 494px;
-    animation: line-anim 2s ease forwards 0.3s;
-}
-#logo:hover path:nth-child(3){
-    stroke-dasharray: 494px;
-    stroke-dashoffset: 494px;
-    animation: line-anim 2s ease forwards 0.6s;
-}
-#logo:hover path:nth-child(4){
-    stroke-dasharray: 737;
-    stroke-dashoffset: 737;
-    animation: line-anim 2s ease forwards 0.9s;
-}
-#logo:hover path:nth-child(5){
-    stroke-dasharray: 419px;
-    stroke-dashoffset: 419px;
-    animation: line-anim 2s ease forwards 1.2s;
-}
-#logo:hover path:nth-child(6){
-    stroke-dasharray: 434px;
-    stroke-dashoffset: 434px;
-    animation: line-anim 2s ease forwards 1.5s;
-}
-#logo:hover path:nth-child(7){
-    stroke-dasharray: 138px;
-    stroke-dashoffset: 138px;
-    animation: line-anim 2s ease forwards 1.8s;
-}
-#logo:hover path:nth-child(8){
-    stroke-dasharray: 399px;
-    stroke-dashoffset: 399px;
-    animation: line-anim 2s ease forwards 2.1s;
-}
-#logo:hover path:nth-child(9){
-    stroke-dasharray: 434px;
-    stroke-dashoffset: 434px;
-    animation: line-anim 2s ease forwards 2.4s;
-}
-#logo:hover path:nth-child(10){
-    stroke-dasharray: 434px;
-    stroke-dashoffset: 434px;
-    animation: line-anim 2s ease forwards 2.7s;
-}
-#logo:hover path:nth-child(11){
-    stroke-dasharray: 240px;
-    stroke-dashoffset: 240px;
-    animation: line-anim 2s ease forwards 3.0s;
-}
-
-@keyframes line-anim{
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes fill{
-    from {
-        fill: transparent;
-    }
-    to {
-        fill:white;
-    }
-}
 
 #dark-mode {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,21 +138,19 @@ body {
 }
 
 .button {
-    left: -500px;
-    position: relative;
+    left: -100px;
+    width: 300px;
     display: inline-block;
     padding: 25px 25px;
     margin: 60px 20px;
     border-radius: 8px;
     background-color: rgba(103, 158, 40, 0.438);
     color: #03e9f4;
-    font-family: 'Indie Flower', cursive;
     font-size: 35px;
     text-decoration: none;
     overflow: hidden;
     transition: 1s;
-    letter-spacing: 3px;
-    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); */
+    letter-spacing: 2px;
 }
 
 .button:nth-child(1) {
@@ -288,98 +170,16 @@ body {
     box-shadow: 0 0 200px #03e9f4;
 }
 
-a span {
-    position: absolute;
-    display: block;
-}
 
-/* a span:nth-child(1) {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
-    animation: animate1 1s linear infinite;
-}
-
-@keyframes animate1 {
-    0% {
-        left: -100%;
-    }
-    50%, 100% {
-        left: 100%
-    }
-}
-
-a span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: animate2 1s linear infinite;
-    animation-delay: 0.25s;
-}
-
-@keyframes animate2 {
-    0% {
-        top: -100%;
-    }
-    50%, 100% {
-        top: 100%
-    }
-}
-
-a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: animate3 1s linear infinite;
-    animation-delay: 0.50s;
-}
-
-@keyframes animate3 {
-    0% {
-        right: -100%;
-    }
-    50%, 100% {
-        right: 100%
-    }
-}
-
-a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
-    animation: animate4 1s linear infinite;
-    animation-delay: 0.75s;
-}
-
-@keyframes animate4 {
-    0% {
-        bottom: -100%;
-    }
-    50%, 100% {
-        bottom: 100%
-    }
-} */
-
-body, .quote-input {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
 .container {
   position: absolute;
-  background-color: #cd58eb75;
+  background-color: #ce58eb81;
   padding: 1rem;
   top: 2rem;
   right: 2rem;
   border-radius: .5rem;
-  width: 700px;
+  width: 400px;
   max-width: 70%;
   
 }
@@ -393,23 +193,36 @@ body, .quote-input {
   font-weight: bold;
 }
 
+.score {
+    /* position: absolute; */
+    font-size: 3em;
+    color: white;
+}
+
 .quote-display {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bolder;
   margin-bottom: 1rem;
   margin-left: calc(1rem + 2px);
   margin-right: calc(1rem + 2px);
+  max-height: 50%;
+  /* overflow: hidden; */
 }
 
 .quote-input {
   background-color: transparent;
-  border: 2px solid #A1922E;
+  border: 4px solid #887b33;
   outline: none;
   width: 100%;
   height: 8rem;
   margin: auto;
   resize: none;
   padding: .5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  color: white;
   border-radius: .5rem;
+  /* display: none; */
 }
 
 .quote-input:focus {
