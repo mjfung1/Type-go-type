@@ -1,6 +1,5 @@
 # CSS Animations
-
-https://mjfung1.github.io/CSS-animation/
+https://mjfung1.github.io/Typing-after-dark/
 
 
 
