@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -23,8 +24,9 @@ body {
 
 #ship {
     position: absolute;
-    top: 150px;
-    left: 200px;
+    top: 110px;
+    left: 10px;
+    z-index: 3;
 }
 
 #space-ship {
@@ -72,7 +74,7 @@ body {
 #bike {
     position: absolute;
     bottom: 10px;
-    right: 550px;
+    right: 650px; 
 }
 
 
@@ -172,37 +174,39 @@ body {
 
 
 
+
+
 .container {
   position: absolute;
-  background-color: #ce58eb81;
+  background-color: #ce58eba4;
   padding: 1rem;
-  top: 2rem;
-  right: 2rem;
+  top: 1.5rem;
+  right: 7rem;
   border-radius: .5rem;
-  width: 400px;
+  width: 700px;
   max-width: 70%;
-  
+  z-index: 30;
 }
 
-.timer {
-  position: absolute;
-  top: 3rem;
-  left: 25rem;
-  font-size: 3rem;
-  color: #e9bae9f1;
+#time {
+  font-size: 2.5rem;
+  color: #fffffff1;
   font-weight: bold;
 }
 
-.score {
-    /* position: absolute; */
-    font-size: 3em;
+#scorer {
+    font-size: 1.5rem;
+    color: rgb(10, 45, 143);
+}
+
+p {
     color: white;
 }
 
 .quote-display {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: white;
-  font-weight: bolder;
+  font-weight: boldest;
   margin-bottom: 1rem;
   margin-left: calc(1rem + 2px);
   margin-right: calc(1rem + 2px);
@@ -212,21 +216,23 @@ body {
 
 .quote-input {
   background-color: transparent;
-  border: 4px solid #887b33;
+  border: 4px solid #b5b2c5;
   outline: none;
-  width: 100%;
-  height: 8rem;
+  width: 60%;
+  height: 5.5rem;
   margin: auto;
   resize: none;
   padding: .5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
   color: white;
   border-radius: .5rem;
+  text-align: center;
   /* display: none; */
 }
 
 .quote-input:focus {
-  border-color: black;
+  border-color: rgb(116, 10, 236);
 }
 
 .correct {
@@ -236,4 +242,39 @@ body {
 .incorrect {
   color: red;
   text-decoration: underline;
+}
+
+#navbar {
+    position: absolute;
+
+}
+
+.icons div{
+    display: inline-block;
+    padding-left: 13px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.mu-icon {
+    font-size: 35px;
+    color: white;
+}
+
+.created {
+    position: relative;
+    top: 210px;
+    z-index: 1;
+}
+
+.boi {
+    position: relative;
+    top: 13px;
+    color: rgb(237, 180, 252);
+    font-size: 1.2rem;
+}
+.name {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.5rem;
+    color: white;
 }
