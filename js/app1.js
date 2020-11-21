@@ -1,6 +1,34 @@
 // window.addEventListener('load', init);
 
 // Globals
+// const words = [
+//   'hat',
+//   'river',
+//   'lucky',
+//   'statue',
+//   'generate',
+//   'stubborn',
+//   'cocktail',
+//   'runaway',
+//   'joke',
+//   'developer',
+//   'establishment',
+//   'hero',
+//   'javascript',
+//   'nutrition',
+//   'revolver',
+//   'echo',
+//   'siblings',
+//   'investigate',
+//   'horrendous',
+//   'symptom',
+//   'laughter',
+//   'magic',
+//   'master',
+//   'space',
+//   'definition'
+// ];
+
 
 // Available Levels
 const levels = {
