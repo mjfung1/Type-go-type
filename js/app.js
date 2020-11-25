@@ -161,3 +161,31 @@ function checkStatus() {
     score = -1;
   }
 }
+
+let myAudio = document.querySelector("#myAudio");
+let isPlayingAudio = false;
+
+const togglePlay = () => {
+  if (isPlayingAudio) {
+    myAudio.pause()
+    myAudio.nextElementSibling.innerHTML = `
+                        <a onClick="togglePlay()">
+                            <div class="mu-icon"><i class="fas fa-play"></i></div>
+                        </a>
+    `
+  } else {
+    myAudio.play();
+    myAudio.nextElementSibling.innerHTML = `
+                        <a onClick="togglePlay()">
+                            <div class="mu-icon"><i class="fas fa-pause"></i></div>
+                        </a>
+    `
+  }
+};
+
+myAudio.onplaying = () => {
+  isPlayingAudio = true;
+};
+myAudio.onpause = () => {
+  isPlayingAudio = false;
+};
