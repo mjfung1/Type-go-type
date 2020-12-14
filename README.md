@@ -1,18 +1,23 @@
-# CSS Animations
+# Typing After Dark
+        A simple typing game with some lofi and midnight solace kinda feel.  Enjoy!
 https://mjfung1.github.io/Typing-after-dark/
 
 
 
 ## Functionality/MVP
 
-### The user will be able to interact with CSS and Javascript animations with mouse hovers and js event handlers.  
-        Bicycle Animation - when a user hovers the bike
-                1. Wheels rotate on its axis
-                2. Person moves up and down on y-axis
-        Saying Hi - when user clicks
-                1. Animation waves arms
+### The game starts on load.  User will be presented with beautifull animations. 
+        The game starts as soon as the page loads, so get ready!
+                1. To play again: just type the current word and score will reset.
+                2. Borders will light green if correct, and red if incorrect
+        Animations
+                1. Bicycle wheels around its x-axis
+                2. Person moves up and down on its y-axis
+                3. The spacecraft and the light beam rotate on its x-axis with constraint.
+        
                 
 ## Wireframes
+        <img src="wireframes.png">
 
 ## Artchitecture and Technologies
 This project is build with HTML, CSS, and vanilla JavaScript.
