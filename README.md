@@ -17,7 +17,8 @@ https://mjfung1.github.io/Typing-after-dark/
         
                 
 ## Wireframes
-        <img src="wireframes.png">
+        <img width="1027" alt="Screen Shot 2020-12-14 at 4 59 42 PM" src="https://user-images.githubusercontent.com/64858239/102143544-18c85080-3e32-11eb-957d-8f795a31a81b.png">
+
 
 ## Artchitecture and Technologies
 This project is build with HTML, CSS, and vanilla JavaScript.
