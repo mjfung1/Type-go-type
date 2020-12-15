@@ -25,5 +25,5 @@ This project is build with HTML, CSS, and vanilla JavaScript.
 
 ## Implementation and Timeline
 
-## Bonus Features
+## Future implementations 
 Be able to manipulate different CSS transition properties to test different animations.
