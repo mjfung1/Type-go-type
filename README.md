@@ -17,7 +17,7 @@ https://mjfung1.github.io/Typing-after-dark/
         
                 
 ## Wireframes
-        ![wireframe](wireframes.png)
+        ![wireframe](./wireframes.png)
 
 
 ## Artchitecture and Technologies
