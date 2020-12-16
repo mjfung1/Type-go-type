@@ -27,7 +27,9 @@ https://mjfung1.github.io/Typing-after-dark/
 ![picture](./game.gif)
 
 ## Gameplay
-![picture](./gameplay.gif)
+<!-- ![picture|512x397, 20%](./gameplay.gif) -->
+<img src="./gameplay.gif" width="250" height="150"/>
+
 ## Implementation and Timeline
 
 ## Future implementations 
