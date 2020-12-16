@@ -21,9 +21,16 @@ https://mjfung1.github.io/Typing-after-dark/
 
 
 ## Artchitecture and Technologies
-This project is build with HTML, CSS, and vanilla JavaScript.
+        This project is built with HTML, CSS, and vanilla JavaScript.
 
+
+![picture](./game.gif)
+
+## Gameplay
+![picture](./gameplay.gif)
 ## Implementation and Timeline
 
 ## Future implementations 
-Be able to manipulate different CSS transition properties to test different animations.
+ - SVG objects reacting to the game
+ - Choosing between typing quotes or words
+ - Add different time limit levels
