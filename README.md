@@ -28,9 +28,11 @@ https://mjfung1.github.io/Typing-after-dark/
 
 ## Gameplay
 <!-- ![picture|512x397, 20%](./gameplay.gif) -->
-<img src="./gameplay.gif" width="250" height="150"/>
+<img src="./gameplay.gif" width="380" height="150"/>
 
-## Implementation and Timeline
+        - Good animation provides visual cues to the user for better gameplay.  
+        - This was achieved by using JavaScript to toggle between CSS-classes
+
 
 ## Future implementations 
  - SVG objects reacting to the game
