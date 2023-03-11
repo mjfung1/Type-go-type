@@ -72,6 +72,9 @@ div p {
     margin-bottom: 0;
 }
 
+.icon-hover:hover {
+    color: var(--purple);
+}
 
 
 
