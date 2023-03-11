@@ -130,7 +130,7 @@ function matchWords() {
     const cheering = ["Good Job!", "Keep going!", "Amazing!", "Type Master", "So fast...", "Hackerboi", "WOW!", "Impressive", "Great", "Excellent" ];
     const cheer = cheering[Math.floor(Math.random() * cheering.length)];
     message.innerHTML = cheer;
-    message.setAttribute('style', 'color: rgb(216, 186, 17); font-size: 50px; font-weight:700');
+    message.setAttribute('style', 'color: rgb(216, 186, 17); font-size: 2rem; font-weight:700');
     return true;
   } else {
     message.innerHTML = "";
@@ -178,8 +178,6 @@ function countdown() {
       localStorage.setItem("best_score", score);
     }
 
-    message.innerHTML = "Finish Typing To Reset";
-    message.setAttribute('style', 'color: rgb(216, 186, 17); font-size: 40px; font-weight:700');
     // Game is over
     isPlaying = false;
   }
@@ -192,7 +190,7 @@ function checkStatus() {
   if (!isPlaying && time === 0) {
     // message.setAttribute('style', 'color: red;')
     message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Finish Typing To Reset </p> </div>' ;
-    message.setAttribute('style', 'font-size: 40px; font-weight: bold');
+    message.setAttribute('style', 'font-size: 2rem; font-weight: bold');
     score = -1;
   }
 }
