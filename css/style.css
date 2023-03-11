@@ -88,6 +88,18 @@ div p {
     max-height: 50%;
     background-color: var(--purple);
     border-radius: 10px;
+    animation: blink 1.75s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    50% {
+        background-color: rgba(90, 66, 155, 0.827);
+    }
+    100% {
+        background-color: rgba(90, 66, 155, 0.371);
+    }
+
+
 }
 
 .quote-input {
@@ -107,8 +119,10 @@ div p {
     color: white;
     border-radius: .5rem;
     text-align: center;
-
+    
 }
+
+
 
 
 .correct {
@@ -325,9 +339,14 @@ div p {
         flex-direction: row;
         justify-content: space-between;
         width: 300px;
-        height: 100px;
+        height: 120px;
         margin-top: 30px;
+        
 
+    }
+    .stats-board h3 {
+        font-size: 2rem;
+        margin: 0 52px;
     }
     .game-container {
         margin-top: 30px;
