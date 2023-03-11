@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Over+the+Rainbow&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --purple: rgba(90, 66, 155, 0.827);
+}
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -14,19 +17,159 @@ body {
 }
 
 .background {
-    position: relative;
-    background: #00fdff url(1748.jpg);
+    background: #4f6b6b url(1748.jpg);
     height: 100vh;
     background-size: cover;
     background-position: repeat-x;
     animation: animatecity 20s linear infinite;
 }
 
+
+.navbar {
+    padding-top: 30px;
+}
+
+
+.game-container {
+    position: relative;
+    margin: 80px auto;
+    background-color: #6120a5b0;
+    padding: 3rem;
+    border-radius: .5rem;
+    min-width: 570px;
+    max-width: 1200px;
+    border-radius: 20px;
+    z-index: 500;
+    height: 600px;
+}
+
+
+
+.instructions {
+    font-size: 1.8rem;
+    /* margin-bottom: 20px; */
+    color: rgb(216, 186, 17);
+}
+
+div {
+    color: #e8d52c;
+}
+div p {
+    color: white;
+}
+
+#time {
+    font-size: 5.5rem;
+    color: white;
+}
+
+
+
+
+#score {
+    display: block;
+    margin-bottom: 0;
+}
+
+
+
+
+.score-container p{
+    color: rgb(216, 186, 17);
+}
+
+.quote-display {
+    font-size: 5rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  
+    max-height: 50%;
+    background-color: var(--purple);
+    border-radius: 10px;
+}
+
+.quote-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -12;
+    background-color: transparent;
+    border: 4px solid #b5b2c5;
+    outline: none;
+    width: 60%;
+    height: 5.5rem;
+    margin: auto;
+    resize: none;
+    padding: .5rem 1rem;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+    border-radius: .5rem;
+    text-align: center;
+
+}
+
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+
+.icons div {
+    display: inline-block;
+    padding-left: 13px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.mu-icon {
+    font-size: 35px;
+    color: white;
+}
+
+.created {
+    position: absolute;
+    top: 390px;
+    right: 80px;
+}
+
+.boi {
+    /* position: relative; */
+    /* top: 13px; */
+
+    color: rgb(217, 170, 229);
+    font-size: 1.2rem;
+}
+
+.name {
+
+    font-size: 1.8rem;
+    color: white;
+
+    font-family: 'Over the Rainbow', cursive;
+}
+
+
+.third-column {
+    position: relative;
+}
+
+
 #ship {
     position: absolute;
-    top: 110px;
-    left: 10px;
-    z-index: 3;
+        top: 200px;
+        right: 15px;
+}
+
+#bike {
+    position: absolute;
+    bottom: 10px;
+    right: -42px;
 }
 
 #space-ship {
@@ -71,11 +214,6 @@ body {
     }
 }
 
-#bike {
-    position: absolute;
-    bottom: 10px;
-    right: 650px; 
-}
 
 
 
@@ -128,154 +266,77 @@ body {
 
 
 
+#message {
+    height: 90px;
+}
 
-#dark-mode {
-    position: absolute;
+
+
+
+
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 5px;
+}
+
+.first-column {
+    align-self: center;
+    justify-self: center;
+}
+
+.stats-board {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 30vh;
     flex-direction: column;
+    justify-content: space-evenly;
 
+    background-color: #6120a5b0;
+    padding: 2rem;
+    border-radius: .5rem;
+    min-width: 100px;
+    height: 500px;
+    border-radius: 20px;
+    z-index: 500;
 }
 
-.button {
-    left: -100px;
-    width: 300px;
-    display: inline-block;
-    padding: 25px 25px;
-    margin: 60px 20px;
-    border-radius: 8px;
-    background-color: rgba(103, 158, 40, 0.438);
-    color: #03e9f4;
-    font-size: 35px;
-    text-decoration: none;
-    overflow: hidden;
-    transition: 1s;
-    letter-spacing: 2px;
-}
-
-.button:nth-child(1) {
-    filter: hue-rotate(170deg);
-}
-
-.button:nth-child(2) {
-    filter: hue-rotate(800deg);
-}
-
-.button:hover {
-    background: #03e9f4;
-    color: #050801;
-    box-shadow: 0 0 5px #03e9f4;
-    box-shadow: 0 0 25px #03e9f4;
-    box-shadow: 0 0 50px #03e9f4;
-    box-shadow: 0 0 200px #03e9f4;
-}
-
-
-
-
-
-.container {
-  position: absolute;
-  background-color: #ce58eba4;
-  padding: 1rem;
-  top: 1.5rem;
-  right: 7rem;
-  border-radius: .5rem;
-  width: 700px;
-  max-width: 70%;
-  z-index: 30;
-}
-
-#time {
-  font-size: 2.5rem;
-  color: #fffffff1;
-  font-weight: bold;
-}
-
-#scorer {
-    font-size: 1.5rem;
-    color: rgb(10, 45, 143);
-}
-
-p {
+.stats-board h3 {
     color: white;
+    font-size: 4rem;
 }
 
-.quote-display {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: boldest;
-  margin-bottom: 1rem;
-  margin-left: calc(1rem + 2px);
-  margin-right: calc(1rem + 2px);
-  max-height: 50%;
-  /* overflow: hidden; */
-}
+@media only screen and (max-width: 1200px) {
+    #ship {
+        display: none;
+    }
+    
+    #bike {
+        display: none;
+    }
 
-.quote-input {
-  background-color: transparent;
-  border: 4px solid #b5b2c5;
-  outline: none;
-  width: 60%;
-  height: 5.5rem;
-  margin: auto;
-  resize: none;
-  padding: .5rem 1rem;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  color: white;
-  border-radius: .5rem;
-  text-align: center;
-  /* display: none; */
-}
+    .created {
+        display: none;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .stats-board {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        height: 190px;
+        margin-top: 30px;
 
-.quote-input:focus {
-  border-color: rgb(116, 10, 236);
+    }
+    .game-container {
+        margin-top: 30px;
+        padding-bottom: 0;
+        height: 500px;
+    }
+    .quote-display {
+        font-size: 3.8rem;
+    }
 }
-
-.correct {
-  color: green;
-}
-
-.incorrect {
-  color: red;
-  text-decoration: underline;
-}
-
-#navbar {
-    position: absolute;
-
-}
-
-.icons div{
-    display: inline-block;
-    padding-left: 13px;
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-.mu-icon {
-    font-size: 35px;
-    color: white;
-}
-
-.created {
-    position: relative;
-    top: 210px;
-    z-index: 1;
-}
-
-.boi {
-    position: relative;
-    top: 13px;
-    color: rgb(237, 180, 252);
-    font-size: 1.2rem;
-}
-.name {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 2.5rem;
-    color: white;
-}
-

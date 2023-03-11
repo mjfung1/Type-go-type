@@ -1,4 +1,8 @@
+
+
 window.addEventListener('load', init);
+
+
 
 // Globals
 
@@ -18,34 +22,50 @@ let currentLevel = levels.hard;
 let time = currentLevel;
 let score = 0;
 let isPlaying;
+let bestLocalScore;
 
 // DOM Elements
+const gameContainer = document.querySelector(".game-container");
 const wordInput = document.querySelector('#word-input');
-const currentWord = document.querySelector('#current-word');
+const currentWord = document.querySelector('#current-word p');
 const scoreDisplay = document.querySelector('#score');
+const bestScoreDisplay = document.querySelector('#best-score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
-const seconds = document.querySelector('#seconds');
-// const biker = document.querySelector('#bike');
+const seconds = document.querySelector('.seconds');
+const audio = new Audio("../keyboard-sound.mp3");
+
+
+currentWord.addEventListener("click", () => wordInput.focus());
+gameContainer.addEventListener("click", () => wordInput.focus());
 
 
 
-
+function typingSound() {
+  audio.play();
+}
 
 // Fetching 
-const RANDOM_WORDS_API_URL = './words.json'
+// const RANDOM_WORDS_API_URL = './words.json'
 
 // QUOTE FETCHING. IMPLEMENT LATER
-// const RANDOM_QUOTES_API_URL = 'https://api.quotable.io/random'
+const RANDOM_WORDS_API_URL = 'https://random-word-api.herokuapp.com/word';
+
+// const RANDOM_WORDS_API_URL = "https://random-word-api.herokuapp.com/all";
 
 // Initialize Game
 function init() {
+  // Set best score in locaStorage
+  if (localStorage.getItem("best_score") == null) {
+    localStorage.setItem("best_score", 0);
+  }
+  bestLocalScore = localStorage.getItem("best_score");
+  bestScoreDisplay.innerHTML = bestLocalScore;
+
   // Show number of seconds in UI
   seconds.innerHTML = currentLevel;
   // Load word from array
   showWord();
-  // Set Biker's initial position
-  // biker.setAttribute('style', `right: ${currentPosition}px;`);
   // Start matching on word input
   wordInput.addEventListener('input', startMatch);
   // Call countdown every second
@@ -70,6 +90,8 @@ function startMatch() {
     scoreDisplay.innerHTML = 0;
   } else {
     scoreDisplay.innerHTML = score;
+
+
   }
 }
 
@@ -82,6 +104,7 @@ function matchWords() {
 
   const arrayCurrentWord = currentWord.querySelectorAll('span');
   const arrayWordInput = wordInput.value.split('');
+  wordInput.addEventListener("keypress", () => typingSound());
 
   let correct = true;
   arrayCurrentWord.forEach((characterSpan, index) => {
@@ -99,35 +122,39 @@ function matchWords() {
       characterSpan.classList.add('incorrect')
       correct = false
   }
+
   });
 
 
   if (wordInput.value === currentWord.innerText) {
-    message.innerHTML = 'Correct!!!';
-    message.setAttribute('style', 'color: white; font-size: 30px;');
+    const cheering = ["Good Job!", "Keep going!", "Amazing!", "Type Master", "So fast...", "Hackerboi", "WOW!", "Impressive", "Great", "Excellent" ];
+    const cheer = cheering[Math.floor(Math.random() * cheering.length)];
+    message.innerHTML = cheer;
+    message.setAttribute('style', 'color: rgb(216, 186, 17); font-size: 50px; font-weight:700');
     return true;
   } else {
-    message.innerHTML = 'Good Job!'
-    message.setAttribute('style', 'color: blue; font-size: 30px;');
+    message.innerHTML = "";
     return false;
   }
+
 }
 
 // ASYNC ATTEMPT OF RAMDOM WORDS
-function getRandomWord() {
-  return fetch(RANDOM_WORDS_API_URL)
-    .then(response => response.json())
-    .then(data => data.data)
+async function getRandomWord() {
+  const response = await fetch(RANDOM_WORDS_API_URL)
+  const data = await response.json();
+
+  return data[0];
 }
 
 // Pick & show random word
 async function showWord() {
 
-  const words = await getRandomWord();
+  const randomWord = await getRandomWord();
   // Generate random array index
-  const randIndex = Math.floor(Math.random() * words.length);
+  // const randIndex = Math.floor(Math.random() * randomWords.length);
   // Output random word
-  const randomWord = words[randIndex];
+  // const randomWord = randomWords[randIndex];
 
   currentWord.innerHTML = '';
   randomWord.split('').forEach(character => {
@@ -145,6 +172,14 @@ function countdown() {
     // Decrement
     time--;
   } else if (time === 0) {
+ 
+    if (score > bestLocalScore) {
+      bestScoreDisplay.innerHTML = score;
+      localStorage.setItem("best_score", score);
+    }
+
+    message.innerHTML = "Finish Typing To Reset";
+    message.setAttribute('style', 'color: rgb(216, 186, 17); font-size: 40px; font-weight:700');
     // Game is over
     isPlaying = false;
   }
@@ -156,36 +191,13 @@ function countdown() {
 function checkStatus() {
   if (!isPlaying && time === 0) {
     // message.setAttribute('style', 'color: red;')
-    message.innerHTML = 'Game Over!!!';
-    message.setAttribute('style', 'color: red; font-size: 30px;');
+    message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Finish Typing To Reset </p> </div>' ;
+    message.setAttribute('style', 'font-size: 40px; font-weight: bold');
     score = -1;
   }
 }
 
-let myAudio = document.querySelector("#myAudio");
-let isPlayingAudio = false;
 
-const togglePlay = () => {
-  if (isPlayingAudio) {
-    myAudio.pause()
-    myAudio.nextElementSibling.innerHTML = `
-                        <a onClick="togglePlay()">
-                            <div class="mu-icon"><i class="fas fa-play"></i></div>
-                        </a>
-    `
-  } else {
-    myAudio.play();
-    myAudio.nextElementSibling.innerHTML = `
-                        <a onClick="togglePlay()">
-                            <div class="mu-icon"><i class="fas fa-pause"></i></div>
-                        </a>
-    `
-  }
-};
 
-myAudio.onplaying = () => {
-  isPlayingAudio = true;
-};
-myAudio.onpause = () => {
-  isPlayingAudio = false;
-};
+
+
