@@ -23,6 +23,7 @@ let time = currentLevel;
 let score = 0;
 let isPlaying;
 let bestLocalScore;
+let randomWords;
 
 // DOM Elements
 const gameContainer = document.querySelector(".game-container");
@@ -33,7 +34,7 @@ const bestScoreDisplay = document.querySelector('#best-score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('.seconds');
-const audio = new Audio("../keyboard-sound.mp3");
+const audio = new Audio("./../keyboard-sound.mp3");
 
 
 currentWord.addEventListener("click", () => wordInput.focus());
@@ -49,12 +50,15 @@ function typingSound() {
 // const RANDOM_WORDS_API_URL = './words.json'
 
 // QUOTE FETCHING. IMPLEMENT LATER
-const RANDOM_WORDS_API_URL = 'https://random-word-api.herokuapp.com/word';
+// const RANDOM_WORDS_API_URL = 'https://random-word-api.herokuapp.com/word';
 
-// const RANDOM_WORDS_API_URL = "https://random-word-api.herokuapp.com/all";
+const RANDOM_WORDS_API_URL = "https://random-word-api.herokuapp.com/all";
+
+
+
 
 // Initialize Game
-function init() {
+async function init() {
   // Set best score in locaStorage
   if (localStorage.getItem("best_score") == null) {
     localStorage.setItem("best_score", 0);
@@ -62,6 +66,8 @@ function init() {
   bestLocalScore = localStorage.getItem("best_score");
   bestScoreDisplay.innerHTML = bestLocalScore;
 
+  // Load Words from api
+  randomWords = await getRandomWords();
   // Show number of seconds in UI
   seconds.innerHTML = currentLevel;
   // Load word from array
@@ -140,21 +146,21 @@ function matchWords() {
 }
 
 // ASYNC ATTEMPT OF RAMDOM WORDS
-async function getRandomWord() {
+async function getRandomWords() {
   const response = await fetch(RANDOM_WORDS_API_URL)
   const data = await response.json();
 
-  return data[0];
+  return data;
 }
 
 // Pick & show random word
 async function showWord() {
 
-  const randomWord = await getRandomWord();
+  // const randomWord = await getRandomWord();
   // Generate random array index
-  // const randIndex = Math.floor(Math.random() * randomWords.length);
+  const randIndex = Math.floor(Math.random() * randomWords.length);
   // Output random word
-  // const randomWord = randomWords[randIndex];
+  const randomWord = randomWords[randIndex];
 
   currentWord.innerHTML = '';
   randomWord.split('').forEach(character => {
@@ -189,7 +195,7 @@ function countdown() {
 function checkStatus() {
   if (!isPlaying && time === 0) {
     // message.setAttribute('style', 'color: red;')
-    message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Finish Typing To Reset </p> </div>' ;
+    message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Type Correct Word To Reset </p> </div>' ;
     message.setAttribute('style', 'font-size: 2rem; font-weight: bold');
     score = -1;
   }
