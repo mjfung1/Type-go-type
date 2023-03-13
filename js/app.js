@@ -34,7 +34,7 @@ const bestScoreDisplay = document.querySelector('#best-score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('.seconds');
-const audio = new Audio("./../keyboard-sound.mp3");
+const audio = new Audio("/Typing-after-dark/keyboard-sound.mp3");
 
 
 currentWord.addEventListener("click", () => wordInput.focus());
