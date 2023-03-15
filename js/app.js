@@ -203,7 +203,7 @@ function countdown() {
 function checkStatus() {
   if (!isPlaying && time === 0) {
     // message.setAttribute('style', 'color: red;')
-    message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Type Correct Word To Reset </p> </div>' ;
+    message.innerHTML = '<div> <h3> - Game Over - </h3> <p>Type The Correct Word To Reset </p> </div>' ;
     message.setAttribute('style', 'font-size: 2rem; font-weight: bold');
     score = -1;
   }
