@@ -64,7 +64,7 @@ async function init() {
   bestLocalScore = localStorage.getItem("best_score");
   bestScoreDisplay.innerHTML = bestLocalScore;
 
-  const randomCity = Math.floor(Math.random() * 3) + 1;
+  const randomCity = Math.floor(Math.random() * 6) + 1;
   console.log(randomCity);
 
   // for github
@@ -105,7 +105,6 @@ function startMatch() {
     scoreDisplay.innerHTML = 0;
   } else {
     scoreDisplay.innerHTML = score;
-
 
   }
 }
@@ -183,6 +182,7 @@ async function showWord() {
 function countdown() {
   // Make sure time is not run out
   if (time > 0) {
+
     // Decrement
     time--;
   } else if (time === 0) {
