@@ -32,7 +32,7 @@ const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('.seconds');
 const audio = new Audio("../Typing-after-dark/css/keyboard-sound.mp3");
-
+const background = document.querySelector(".background")
 
 currentWord.addEventListener("click", () => wordInput.focus());
 gameContainer.addEventListener("click", () => wordInput.focus());
@@ -63,6 +63,17 @@ async function init() {
   }
   bestLocalScore = localStorage.getItem("best_score");
   bestScoreDisplay.innerHTML = bestLocalScore;
+
+  const randomCity = Math.floor(Math.random() * 3) + 1;
+  console.log(randomCity);
+
+  // for github
+  // background.style.background = `url(../Typing-after-dark/css/city${randomCity}.jpg)`;
+
+  // for development
+  background.style.background = `url(../css/city${randomCity}.jpg)`;
+
+  background.style.backgroundSize = 'cover'
 
   // Load Words from api
   randomWords = await getRandomWords();
@@ -147,7 +158,6 @@ function matchWords() {
 async function getRandomWords() {
   const response = await fetch(RANDOM_WORDS_API_URL)
   const data = await response.json();
-  console.log(data.data);
   return data.data;
 }
 

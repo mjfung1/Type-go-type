@@ -16,7 +16,7 @@ body {
 }
 
 .background {
-    background: #4f6b6b url(1748.jpg);
+    background: url(city2.jpg);
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -70,6 +70,10 @@ div p {
 #score {
     display: block;
     margin-bottom: 0;
+}
+
+.icon-hover {
+    transition: all 0.35s ease-in-out;
 }
 
 .icon-hover:hover {
