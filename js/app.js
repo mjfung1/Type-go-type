@@ -28,6 +28,8 @@ const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word p');
 const scoreDisplay = document.querySelector('#score');
 const bestScoreDisplay = document.querySelector('#best-score');
+const previousScoreDisplay = document.querySelector('#previous');
+
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('.seconds');
@@ -186,11 +188,16 @@ function countdown() {
     // Decrement
     time--;
   } else if (time === 0) {
- 
+
+    if (score != -1) {
+      previousScoreDisplay.innerHTML = score;
+    }
+    
     if (score > bestLocalScore) {
       bestScoreDisplay.innerHTML = score;
       localStorage.setItem("best_score", score);
     }
+
 
     // Game is over
     isPlaying = false;
