@@ -68,10 +68,10 @@ async function init() {
   console.log(randomCity);
 
   // for github
-  // background.style.background = `url(../Typing-after-dark/css/city${randomCity}.jpg)`;
+  background.style.background = `url(../Typing-after-dark/css/city${randomCity}.jpg)`;
 
   // for development
-  background.style.background = `url(../css/city${randomCity}.jpg)`;
+  // background.style.background = `url(../css/city${randomCity}.jpg)`;
 
   background.style.backgroundSize = 'cover'
 
