@@ -15,9 +15,6 @@ const levels = {
 // To change level
 let currentLevel = levels.hard;
 
-// Current Biker Position
-// let currentPosition = 50;
-
   
 let time = currentLevel;
 let score = 0;
@@ -47,12 +44,13 @@ function typingSound() {
 }
 
 // Fetching 
-// const RANDOM_WORDS_API_URL = './words.json'
+const RANDOM_WORDS_API_URL = './words.json';
+
 
 // QUOTE FETCHING. IMPLEMENT LATER
 // const RANDOM_WORDS_API_URL = 'https://random-word-api.herokuapp.com/word';
 
-const RANDOM_WORDS_API_URL = "https://random-word-api.herokuapp.com/all";
+// const RANDOM_WORDS_API_URL = "https://random-word-api.herokuapp.com/all";
 
 
 
@@ -149,8 +147,8 @@ function matchWords() {
 async function getRandomWords() {
   const response = await fetch(RANDOM_WORDS_API_URL)
   const data = await response.json();
-
-  return data;
+  console.log(data.data);
+  return data.data;
 }
 
 // Pick & show random word
