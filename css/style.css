@@ -21,7 +21,7 @@ body {
     width: 100vw;
     background-size: cover;
     background-position: repeat-x;
-    animation: animatecity 20s linear infinite;
+    animation: animatecity 50s linear infinite;
     
 }
 
