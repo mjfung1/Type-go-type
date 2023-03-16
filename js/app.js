@@ -189,7 +189,7 @@ function countdown() {
     time--;
   } else if (time === 0) {
 
-    if (score != -1) {
+    if (score > 0) {
       previousScoreDisplay.innerHTML = score;
     }
     
