@@ -1,6 +1,6 @@
 # Typing After Dark
         A simple typing game with some lofi and midnight solace kinda feel.  Enjoy!
-https://mjfung1.github.io/Typing-after-dark/
+https://mjfung1.github.io/synthtype/
 
 
 

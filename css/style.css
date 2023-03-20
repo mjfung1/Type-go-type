@@ -369,3 +369,32 @@ div p {
         font-size: 1rem;
     }
 }
+
+
+
+
+/* TO BE TESTED FOR BLINKING */
+
+span {
+    position: relative;
+}
+
+
+span.active::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 3px;
+    bottom: 0;
+    left: -2px;
+    opacity: 0;
+    border-radius: 5px;
+    background: red;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}

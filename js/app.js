@@ -33,7 +33,7 @@ const previousScoreDisplay = document.querySelector('#previous');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('.seconds');
-const audio = new Audio("../Typing-after-dark/css/keyboard-sound.mp3");
+const audio = new Audio("../synthtype/css/keyboard-sound.mp3");
 const background = document.querySelector(".background")
 
 currentWord.addEventListener("click", () => wordInput.focus());
@@ -70,7 +70,7 @@ async function init() {
   console.log(randomCity);
 
   // for github
-  background.style.background = `url(../Typing-after-dark/css/city${randomCity}.jpg)`;
+  background.style.background = `url(../synthtype/css/city${randomCity}.jpg)`;
 
   // for development
   // background.style.background = `url(../css/city${randomCity}.jpg)`;
@@ -114,7 +114,6 @@ function startMatch() {
 
 
 
-
 // Match currentWord to wordInput
 function matchWords() {
 
@@ -123,24 +122,55 @@ function matchWords() {
   wordInput.addEventListener("keypress", () => typingSound());
 
   let correct = true;
+
+  
   arrayCurrentWord.forEach((characterSpan, index) => {
     const character = arrayWordInput[index];
-
+    
     if (character == null) {
-      characterSpan.classList.remove('correct')
-      characterSpan.classList.remove('incorrect')
+      characterSpan.classList.remove('correct');
+      characterSpan.classList.remove('incorrect');
+
       correct = false
     } else if (character === characterSpan.innerText) {
-      characterSpan.classList.add('correct')
-      characterSpan.classList.remove('incorrect')
+      characterSpan.classList.add('correct');
+      characterSpan.classList.remove('incorrect');
     } else {
-      characterSpan.classList.remove('correct')
-      characterSpan.classList.add('incorrect')
+      characterSpan.classList.remove('correct');
+      characterSpan.classList.add('incorrect');
       correct = false
-  }
+    }
+    
 
+    // TEST TEST TEST - removes active elements
+    // if (characterSpan.classList.contains("correct") || characterSpan.classList.contains("incorrect")) {
+    //   characterSpan.classList.remove("active");
+    // } else {
+    //   arrayCurrentWord[index + 1].classList.add("active");
+    // }
+    
   });
 
+
+   // TEST TEST TEST
+  // for (let i = 0; i <= arrayCurrentWord.length; i++) {
+
+  //   if (i === arrayCurrentWord.length) {
+  //     let newSpan = document.createElement("span");
+  //     currentWord.appendChild(newSpan);
+  //     arrayCurrentWord.push(newSpan);
+  //   }
+
+  //   let span = arrayCurrentWord[i];
+  //   if (!(span.classList.contains("correct") || span.classList.contains("incorrect"))) {
+  //     span.classList.add("active");
+  //     break;
+  //   }
+  // }
+
+
+ 
+  
 
   if (wordInput.value === currentWord.innerText) {
     const cheering = ["Good Job!", "Keep going!", "Amazing!", "Type Master", "So fast...", "Hackerboi", "WOW!", "Impressive", "Great", "Excellent" ];
